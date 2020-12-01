@@ -3,6 +3,7 @@ using CourseSignUp.Domain.Events.Course;
 using CourseSignUp.Domain.Services.Handlers;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using System.Threading;
 
 namespace CourseSignUp.Process
 {
@@ -17,6 +18,8 @@ namespace CourseSignUp.Process
             var eventBus = provider.GetService<IEventBus>();
 
             eventBus.Subscribe<SignUpEvent, SignUpHandler>();
+
+            Thread.Sleep(Timeout.Infinite);
         }
 
         public static void ConfigureServices(IServiceCollection services)
