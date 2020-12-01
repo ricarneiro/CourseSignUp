@@ -8,7 +8,8 @@ namespace CourseSignUp.Domain.Contracts.Services
 {
     public interface ICourseService
     {
-        void Create(CourseDto course);
+        CourseLecture Get(string courseId);
+        void Create(CreateCourseDto course);
         void Signup(SignUpToCourseDto courseSignUp);
     }
 }
